@@ -4,15 +4,15 @@ import styled from 'styled-components'
 const Task = props => {
     console.log(props.task.id)
     console.log(props.task.taskTitle)
+
+    const {toggleTask, key, task} = props
     return (
     
         <TaskCard>
             <TaskList
-                
-                onClick={() => props.toggleTask(props.task.id)}
-                className={`task${props.task.completed ? "Completed": ""}`}
-                >
-                <p className={`task${props.task.completed ? "Completed": ""}`}>{props.task.taskTitle}</p>
+                onClick={() => toggleTask(task.id)}
+                className={`task${task.completed ? "Completed": ""}`}>
+                <p className={`task${task.completed ? "Completed": ""}`}>{task.taskTitle}</p>
             </TaskList>
         </TaskCard>
       

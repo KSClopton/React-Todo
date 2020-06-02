@@ -5,13 +5,13 @@ import Task from './Task'
 import styled from 'styled-components'
 
 const TodoList = props => {
-    const {clearCompleted} = props
+    const {clearCompleted, toggleTask, theList} = props
     console.log(props)
     return (
         <div>
             <CardDiv className="todo-list">
-                {props.theList.map(task => (
-                    <Task toggleTask={props.toggleTask} key={task.id} task={task} />
+                {theList.map(task => (
+                    <Task toggleTask={toggleTask} task={task} />
                 ))}
             </CardDiv>
         <ButtonDiv>

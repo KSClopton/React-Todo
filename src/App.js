@@ -25,8 +25,8 @@ class App extends React.Component {
     })
   }
 // GO OVER THIS
-clearCompleted = taskCompleted => {
-  this.setState({theList: theList.filter(task => task.completed === false)})
+clearCompleted = () => {
+  this.setState({theList: this.state.theList.filter(task => task.completed !== true)})
 }
   toggleTask = taskId => {
     this.setState({
@@ -37,9 +37,7 @@ clearCompleted = taskCompleted => {
             completed: !task.completed
           };
         } else {
-          return {
-            task
-          }
+          return task
         }
       })
     })
@@ -47,6 +45,7 @@ clearCompleted = taskCompleted => {
   // design `App` to be the parent component of your application.
   // this component is going to take care of state, and any change handlers you need to work with your state
   render() {
+    {console.log(theList)}
     return (
       <MainDiv className='App'> 
         <Heading>
